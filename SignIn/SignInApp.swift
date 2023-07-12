@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct SignInApp: App {
+    init() {
+        setupAuthentication()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+    }
+}
+
+extension SignInApp {
+    private func setupAuthentication() {
+        FirebaseApp.configure()
     }
 }
